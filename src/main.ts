@@ -6,8 +6,8 @@ import PrimeVue from 'primevue/config';
 import InputText from 'primevue/inputtext';
 import Card from 'primevue/card'
 import Button from 'primevue/button'
-import TabMenu from 'primevue/tabmenu';
 import ChipComp from 'primevue/chip';
+import Menubar from 'primevue/menubar';
 
 import 'primevue/resources/themes/vela-green/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -18,8 +18,8 @@ app.use(PrimeVue);
 app.component('InputText',InputText);
 app.component('CardComp',Card);
 app.component('ButtonComp',Button);
-app.component('TabMenu',TabMenu);
-app.component('ChipComp',ChipComp)
+app.component('MenuBar',Menubar);
+app.component('ChipComp',ChipComp);
 app.use(store);
 app.use(router);
 app.mount('#app');

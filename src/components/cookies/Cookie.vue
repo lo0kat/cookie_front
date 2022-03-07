@@ -1,7 +1,7 @@
 <template>
    <CardComp style="width: 20em">
             <template #header>
-                <img :src="picUrl" width="60" class="rounded" >           
+                <img :src="picUrl" width="5" class="rounded" >           
             </template>
             <template #title>
                 {{name}}

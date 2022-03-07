@@ -1,5 +1,13 @@
 <template>
-<TabMenu :model="items" />
+<MenuBar :model="items">
+    <template #start>
+        <img src="@/assets/images/cookieLogo.png" width="100">   
+    </template>
+     <template #end>
+        <img src="@/assets/images/cookieAdaraText.png" width="90">   
+    </template>
+</MenuBar>
+
 </template>
 
 <script lang="ts">
@@ -11,7 +19,7 @@ import { Options, Vue } from 'vue-class-component';
       active:3,
       items: [
                 {
-                    label: 'Home',
+                    label: 'Accueil',
                     icon: 'pi pi-fw pi-home',
                     to: '/'
                 },
@@ -21,7 +29,7 @@ import { Options, Vue } from 'vue-class-component';
                     to: '/cookies'
                 },
                 {
-                    label: 'Login',
+                    label: 'Connexion',
                     icon: 'pi pi-fw pi-user',
                     to: '/login'
                 }

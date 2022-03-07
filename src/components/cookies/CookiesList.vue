@@ -1,0 +1,39 @@
+<template>
+  <Cookie
+      v-for="cookie  in  cookies"
+      :key="cookie._id"
+      :_id="cookie._id"
+      :name="cookie.name"
+      :picUrl="cookie.picUrl"
+      :price="cookie.price"
+      :ingredients="cookie.ingredients"
+      :steps="cookie.steps"
+    />
+
+
+                            
+</template>
+
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import Cookie from '@/components/cookies/Cookie.vue'
+
+@Options({
+  components: {
+    Cookie
+  },
+
+  computed: {
+      cookies() {
+        return this.$store.getters.cookies;
+      }
+    },
+
+})
+export default class CookiesList extends Vue {}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>

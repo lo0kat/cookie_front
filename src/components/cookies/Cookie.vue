@@ -17,7 +17,7 @@
 
             </template>
             <template #footer>
-                <ButtonComp icon="pi pi-check" label="Commander" />
+                <ButtonComp icon="pi pi-check" label="Commander" @click="addToCart(_id)"/>
                 <ButtonComp icon="pi pi-times" label="Cancel" class="p-button-secondary" style="margin-left: .5em" />
 
             </template>
@@ -37,7 +37,7 @@ import { Options, Vue } from "vue-class-component";
   },
   methods: {
     addToCart(_id:number){
-        this.$store.dispatch("addToCart",_id)
+        this.$store.dispatch("addItem",_id)
     }
   }
 })

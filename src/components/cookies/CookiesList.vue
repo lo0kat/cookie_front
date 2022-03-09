@@ -1,4 +1,6 @@
 <template>
+  <Shopping/>
+
   <Cookie
       v-for="cookie  in  cookies"
       :key="cookie._id"
@@ -18,10 +20,11 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Cookie from '@/components/cookies/Cookie.vue'
-
+import Shopping from '@/components/cookies/Shopping.vue'
 @Options({
   components: {
-    Cookie
+    Cookie,
+    Shopping
   },
 
   computed: {

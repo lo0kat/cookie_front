@@ -1,6 +1,6 @@
 <template>
   <div class="cookies">
-    <CookiesList msg="Init project"/>
+    <CookiesList />
   </div>
 </template>
 

@@ -6,7 +6,7 @@ const store = createStore({
         {
            "_id":0,
            "name":"Cookie aux Pépites de Chocolat",
-           "picUrl":require('@/assets/images/cookie.jpg'),
+           "picUrl":require('@/assets/images/cookieChoco.jpg'),
            "price":2,
            "ingredients":
                {"Oeuf":"1",
@@ -52,8 +52,8 @@ const store = createStore({
        
                {
                    "_id":2,
-                   "name":"Cookie au Caramel",
-                   "picUrl":require('@/assets/images/cookieCaramel.jpg'),
+                   "name":"Cookie aux éclats de Caramel",
+                   "picUrl":require('@/assets/images/cookieChoco.jpg'),
                    "price":2,
                    "ingredients":
                        {"Oeuf":"1",

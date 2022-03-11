@@ -8,10 +8,15 @@ import Card from 'primevue/card'
 import Button from 'primevue/button'
 import ChipComp from 'primevue/chip';
 import Menubar from 'primevue/menubar';
+import Dialog from 'primevue/dialog';
+import Divider from 'primevue/divider';
+import Tag from 'primevue/tag';
 
 import 'primevue/resources/themes/vela-green/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
+import '/node_modules/primeflex/primeflex.css'
+
 
 const app = createApp(App);
 app.use(PrimeVue);
@@ -20,6 +25,9 @@ app.component('CardComp',Card);
 app.component('ButtonComp',Button);
 app.component('MenuBar',Menubar);
 app.component('ChipComp',ChipComp);
+app.component('DialogComp',Dialog);
+app.component('DividerComp',Divider);
+app.component('TagComp',Tag);
 app.use(store);
 app.use(router);
 app.mount('#app');

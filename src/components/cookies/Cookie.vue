@@ -1,7 +1,7 @@
 <template>
-   <CardComp style="width: 20em">
+   <CardComp style="width: 18em">
             <template #header>
-                <img :src="picUrl" width="5" class="rounded" >           
+                <img :src="picUrl" >           
             </template>
             <template #title>
                 {{name}}
@@ -9,17 +9,9 @@
             <template #subtitle>
                <ChipComp label="Sucre" icon="pi pi-check" />
                 <ChipComp label="Beurre" icon="pi pi-check" />
-                  <ChipComp label="Chocolat" icon="pi pi-check" />
-                    <ChipComp label="Oeufs" icon="pi pi-check" />
-            </template>
-            <template #content>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam esse asperiores eum voluptatibus natus. Temporibus ea veritatis aut repellat placeat doloremque, quos vero, ex minus magnam voluptate possimus, eius obcaecati?
-
             </template>
             <template #footer>
                 <ButtonComp icon="pi pi-check" label="Commander" @click="addToCart(_id)"/>
-                <ButtonComp icon="pi pi-times" label="Cancel" class="p-button-secondary" style="margin-left: .5em" />
-
             </template>
         </CardComp>
 </template>

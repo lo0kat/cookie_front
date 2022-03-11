@@ -1,6 +1,6 @@
 <template>
-  <ToastComp position="bottom-right"/>
-   <CardComp style="width: 18em">
+  <ToastComp position="bottom-center"/>
+   <CardComp class= "m-4" style="width: 18em ">
             <template #header>
                 <img :src="picUrl" >           
             </template>
@@ -9,13 +9,13 @@
             </template>
             <template #content>
               <div v-for="(index,value) in ingredients" :key="index">
-               <ChipComp >
+               <ChipComp class="m-2" >
                 {{ value }}
                 </ChipComp>
               </div>
             </template>
             <template #footer >
-                <ButtonComp icon="pi pi-check" label="Commander" @click="addToCart(_id)"/>
+                <ButtonComp icon="pi pi-shopping-cart" label="Commander" @click="addToCart(_id)"/>
             </template>
         </CardComp>
 </template>

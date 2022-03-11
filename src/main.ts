@@ -1,3 +1,8 @@
+import 'primevue/resources/themes/vela-green/theme.css'       //theme
+import 'primevue/resources/primevue.min.css'                 //core css
+import 'primeicons/primeicons.css'                           //icons
+import '/node_modules/primeflex/primeflex.css'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -14,11 +19,7 @@ import Tag from 'primevue/tag';
 import Badge from 'primevue/badge';
 import ToastService from 'primevue/toastservice';
 import Toast from 'primevue/toast';
-
-import 'primevue/resources/themes/vela-green/theme.css'       //theme
-import 'primevue/resources/primevue.min.css'                 //core css
-import 'primeicons/primeicons.css'                           //icons
-import '/node_modules/primeflex/primeflex.css'
+import StyleClass from 'primevue/styleclass';
 
 
 const app = createApp(App);
@@ -33,6 +34,8 @@ app.component('DividerComp',Divider);
 app.component('TagComp',Tag);
 app.component('BadgeComp',Badge);
 app.component('ToastComp',Toast);
+
+app.directive('styleclass', StyleClass);
 
 app.use(ToastService)
 app.use(store);

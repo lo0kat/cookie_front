@@ -23,7 +23,7 @@ import Shopping from '@/components/cookies/Shopping.vue'
       items: [
                 {
                     label: 'Accueil',
-                    icon: 'pi pi-fw pi-home',
+                    icon: 'pi pi-caret-up',
                     to: '/'
                 },
                 {
@@ -54,4 +54,5 @@ export default class HeaderComp extends Vue {}
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

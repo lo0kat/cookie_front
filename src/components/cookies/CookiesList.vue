@@ -1,6 +1,6 @@
 <template>
-<div class="flex justify-content-evenly" >
-  <Cookie class = "flex align-items-center flex-wrap  w-15rem m-2 "
+<div class="flex justify-content-evenly flex-wrap" >
+  <Cookie
       v-for="cookie  in  cookies"
       :key="cookie._id"
       :_id="cookie._id"

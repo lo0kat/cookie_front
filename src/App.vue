@@ -1,8 +1,8 @@
 <template>
-<div>
-  <HeaderComp/>
+<div >
+  <HeaderComp class="sticky" />
   <br>
-  <router-view/>
+  <router-view class="min-h-screen"  />
   <FooterComp/>
 </div>
 </template>
@@ -11,6 +11,8 @@
 import { Options, Vue } from 'vue-class-component';
 import HeaderComp from '@/components/utils/HeaderComp.vue'; // @ is an alias to /src
 import FooterComp from '@/components/utils/FooterComp.vue'
+
+
 @Options({
   components: {
     HeaderComp,
@@ -32,4 +34,17 @@ export default class App extends Vue {}
       font-weight: 400;
       color: var(--text-color);
    }
+   
+   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:1;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
 </style>

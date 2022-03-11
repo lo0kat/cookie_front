@@ -11,6 +11,9 @@ import Menubar from 'primevue/menubar';
 import Dialog from 'primevue/dialog';
 import Divider from 'primevue/divider';
 import Tag from 'primevue/tag';
+import Badge from 'primevue/badge';
+import ToastService from 'primevue/toastservice';
+import Toast from 'primevue/toast';
 
 import 'primevue/resources/themes/vela-green/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -28,6 +31,10 @@ app.component('ChipComp',ChipComp);
 app.component('DialogComp',Dialog);
 app.component('DividerComp',Divider);
 app.component('TagComp',Tag);
+app.component('BadgeComp',Badge);
+app.component('ToastComp',Toast);
+
+app.use(ToastService)
 app.use(store);
 app.use(router);
 app.mount('#app');

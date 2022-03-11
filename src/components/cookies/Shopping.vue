@@ -1,5 +1,10 @@
 <template>
-    <ButtonComp class="md-accent md-raised" @click="showList()" id="show">{{ cartCount }}</ButtonComp>
+    <ButtonComp class="md-accent md-raised" @click="showList()" id="show" >
+            Panier
+            <BadgeComp >
+                {{ cartCount }}
+             </BadgeComp>
+      </ButtonComp>
     <DialogComp header="Votre Panier" v-model:visible="displayResponsive" :breakpoints="{'960px': '75vw'}" :style="{width: '50vw'}">
      <div id="shopping-cart" >
     <div id="shoppingList" class="shoppingBody">
@@ -18,6 +23,14 @@
         
     </div>
   </div>
+
+    <ButtonComp> 
+      Régler la Commande
+    </ButtonComp>
+    <ButtonComp> 
+      Vider le Panier
+    </ButtonComp>
+
     </DialogComp >
 </template>
 
@@ -50,16 +63,6 @@ import { Options, Vue } from "vue-class-component";
     },
     showList() {
       this.displayResponsive = true;
-      var modal = document.getElementById("shoppingList");
-      var btn = document.getElementById("show");
-      btn.onclick = function() {
-        modal.style.display = "block";
-      };
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
     }
   }
 })

@@ -4,16 +4,19 @@
         <img src="@/assets/images/cookieLogo.png" width="100">   
     </template>
      <template #end>
-        <img src="@/assets/images/cookieAdaraText.png" width="90">   
+         <Shopping  />
+        
     </template>
 </MenuBar>
-
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-
+import Shopping from '@/components/cookies/Shopping.vue'
 @Options({
+      components: {
+    Shopping
+  },
   data() {
 		return {
       active:3,
@@ -35,7 +38,15 @@ import { Options, Vue } from 'vue-class-component';
                 }
             ]
 		}
-	}
+	},
+    computed: {
+    StoreCart() {
+      return this.$store.getters.StoreCart;
+    },
+    cartCount() {
+      return this.StoreCart.length; 
+    }
+    }
 })
 export default class HeaderComp extends Vue {}
 </script>

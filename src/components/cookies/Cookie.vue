@@ -1,4 +1,5 @@
 <template>
+  <ToastComp position="bottom-right"/>
    <CardComp style="width: 18em">
             <template #header>
                 <img :src="picUrl" >           
@@ -6,11 +7,14 @@
             <template #title>
                 {{name}}
             </template>
-            <template #subtitle>
-               <ChipComp label="Sucre" icon="pi pi-check" />
-                <ChipComp label="Beurre" icon="pi pi-check" />
+            <template #content>
+              <div v-for="(index,value) in ingredients" :key="index">
+               <ChipComp >
+                {{ value }}
+                </ChipComp>
+              </div>
             </template>
-            <template #footer>
+            <template #footer >
                 <ButtonComp icon="pi pi-check" label="Commander" @click="addToCart(_id)"/>
             </template>
         </CardComp>
@@ -30,7 +34,9 @@ import { Options, Vue } from "vue-class-component";
   methods: {
     addToCart(_id:number){
         this.$store.dispatch("addItem",_id)
+        this.$toast.add({severity:'success', summary: 'Ajouté au panier', detail:'Cookie ajouté au panier avec succés', life: 3000});
     }
+    
   }
 })
 export default class Cookie extends Vue {}

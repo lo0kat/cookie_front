@@ -1,5 +1,4 @@
 <template>
-  <Shopping/>
 <div class="flex justify-content-evenly" >
   <Cookie class = "flex align-items-center flex-wrap  w-15rem m-2 "
       v-for="cookie  in  cookies"
@@ -11,9 +10,7 @@
       :ingredients="cookie.ingredients"
       :steps="cookie.steps"
     />
-</div>
-
-                            
+</div>                     
 </template>
 
 

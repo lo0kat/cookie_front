@@ -8,11 +8,11 @@
                 {{ cartCount }}
              </BadgeComp>
       </ButtonComp>
-    <DialogComp header="Votre Panier" v-model:visible="displayResponsive" :breakpoints="{'960px': '75vw'}" :style="{width: '50vw'}">
+    <DialogComp header="Votre Panier" :modal=true v-model:visible="displayResponsive" :breakpoints="{'960px': '75vw'}" :style="{width: '50vw'}">
      <div id="shopping-cart" >
-    <div id="shoppingList" class="shoppingBody">
+    <div  class="shoppingBody">
       <div v-for="(item, index) in cart" :key="index" class="box" >
-        <h3 class="md-layout-item">{{ item.name }}</h3>
+        <h4 class="md-layout-item">{{ item.name }}</h4>
         <div class="flex justify-content-start">
 
        <img :src="item.picUrl" alt style="width: 5em"/>
@@ -24,10 +24,10 @@
         
     </div>
   </div>
-
+    <template #footer>
     <ButtonComp icon="pi pi-credit-card" label=" Régler la Commande" /> 
-    <ButtonComp icon= "pi pi-times" class="p-button-danger" label =" Vider le Panier" /> 
-
+    <ButtonComp icon= "pi pi-times" class="p-button-danger mt-2" label =" Vider le Panier" /> 
+    </template>
     </DialogComp >
 </template>
 

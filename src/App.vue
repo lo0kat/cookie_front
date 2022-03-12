@@ -3,7 +3,7 @@
   <HeaderComp class="sticky" />
   <br>
   <router-view class="min-h-screen"  />
-  <FooterComp/>
+  <FooterComp />
 </div>
 </template>
 

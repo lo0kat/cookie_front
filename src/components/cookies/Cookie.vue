@@ -1,6 +1,6 @@
 <template>
   <ToastComp position="bottom-center"/>
-   <CardComp class= "m-4" style="width: 18em ">
+   <CardComp class= "m-4 fadeinright animation-duration-500 " style="width: 18em ">
             <template #header>
                 <img :src="picUrl" >           
             </template>

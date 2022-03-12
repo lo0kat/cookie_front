@@ -1,5 +1,5 @@
 <template>
-  <div class="login flex justify-center">
+  <div>
     <SignIn/>
   </div>
 </template>

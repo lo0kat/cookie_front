@@ -1,4 +1,5 @@
 <template>
+<ToastComp position="bottom-center"/>
     <ButtonComp class="md-accent md-raised" @click="showList()" id="show" >
            <i class="pi pi-shopping-cart mr-2"></i> 
            <div>
@@ -17,7 +18,7 @@
 
        <img :src="item.picUrl" alt style="width: 5em"/>
         <TagComp severity="info">{{  item.price+'€'  }}</TagComp>
-        <div class="ml-3"><ButtonComp class="p-button-danger" @click="removeItem(index)">Retirer du Panier</ButtonComp></div>
+        <div class="ml-3"><ButtonComp class="p-button-danger" @click="removeItem(index)" icon= "pi pi-times"></ButtonComp></div>
         </div>
         <DividerComp />
       </div>
@@ -25,8 +26,8 @@
     </div>
   </div>
     <template #footer>
-    <ButtonComp icon="pi pi-credit-card" label=" Régler la Commande" /> 
-    <ButtonComp icon= "pi pi-times" class="p-button-danger mt-2" label =" Vider le Panier" /> 
+    <ButtonComp icon="pi pi-credit-card" label=" Régler la Commande" @click="pay()" /> 
+    <ButtonComp icon= "pi pi-times" class="p-button-danger mt-2" label =" Vider le Panier" @click="resetCart()"/> 
     </template>
     </DialogComp >
 </template>
@@ -43,6 +44,7 @@ import { Options, Vue } from "vue-class-component";
     StoreCart() {
       return this.$store.getters.StoreCart;
     },
+  
     cartCount() {
       return this.StoreCart.length;
     },
@@ -61,6 +63,18 @@ import { Options, Vue } from "vue-class-component";
     showList() {
       this.displayResponsive = true;
     }
+    ,
+    pay(){
+      this.displayResponsive = false;
+      this.$toast.add({severity:'info', summary: 'Demande de Connexion', detail:'Connectez vous pour procéder au paiement', life: 3000});
+      this.$router.push('login');
+    },
+
+     resetCart(){
+       this.displayResponsive = false;
+      this.$store.dispatch("resetCart");
+      this.$toast.add({severity:'warn', summary: 'Panier Supprimé', detail:'Vous venez de réinitialiser votre Panier', life: 3000});
+    },
   }
 })
 export default class Shopping extends Vue {}

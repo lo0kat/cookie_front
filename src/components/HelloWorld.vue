@@ -1,18 +1,36 @@
 <template>
-  <div class="hello">
-    <CardComp class="m-5">
-      <template #content>
+    <CardComp class="m-5 scalein animation-duration-1000 ">
+      <template #header>
+                <img src="@/assets/images/pyrenees.jpg" class=" md:max-h-0">           
+      </template>
+      <template #title>
         <h1>
-        Cookie ADARA
+        COOKIE ADARA
         </h1>
-        <h2>
-        Découvrez nos cookies 
-        </h2>
-        <div>
-        Fabriqués avec des ingrédients locaux du Béarn
+      </template>
+      <template #content>
+          <div>
+        Découvrez nos cookies fabriqués grâce à la production locale du Béarn !
         </div>
       </template>
     </CardComp>
+       <div class="flex align-items-center justify-content-center p-4">
+                    <ButtonComp label="Découvrir nos cookies" icon="pi pi-fw pi-circle-on" @click="$router.push('cookies')" class="scalein animation-duration-1000"></ButtonComp>
+                </div>
+  <div class="flex justify-content-evenly flex-wrap ">
+ 
+    <h2 class="scalein animation-duration-300">
+    Ingrédients de qualité<i class="pi pi-check p-2 " style="font-size: 1rem"></i>
+    </h2>
+  
+    <h2 class="scalein animation-duration-600">
+    0 Conservateurs<i class="pi pi-times p-2" style="font-size: 1rem"></i>      
+    </h2>
+
+   <h2 class="scalein animation-duration-1000">
+    Cookies Frais <i class="pi pi-heart-fill p-2" style="font-size: 1rem"></i> 
+   </h2>
+
   </div>
 </template>
 
@@ -31,18 +49,5 @@ export default class HelloWorld extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

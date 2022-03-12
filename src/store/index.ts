@@ -91,6 +91,10 @@ const store = createStore({
         REMOVE_Item(state, index) {
           state.StoreCart.splice(index, 1);
         },
+
+        RESET_SHOPPING_CART(state){
+          state.StoreCart = [];
+        }
       },
       actions: {
         addItem(context, id) {
@@ -99,6 +103,9 @@ const store = createStore({
     
         removeItem(context, index) {
           context.commit("REMOVE_Item", index);
+        },
+        resetCart(context){
+          context.commit("RESET_SHOPPING_CART");
         },
       },
       modules: {},
